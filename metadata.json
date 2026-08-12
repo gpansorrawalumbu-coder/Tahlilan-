@@ -1,0 +1,6 @@
+{
+  "name": "TAHLIL LIRBOYO RINGKAS",
+  "description": "Aplikasi Tahlil Lirboyo ringkasan Ustadz Muhammad Qosyim versi digital buku saku offline.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

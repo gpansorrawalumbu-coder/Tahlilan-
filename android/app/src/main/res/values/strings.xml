@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tahlil Lirboyo</string>
+    <string name="title_activity_main">Tahlil Lirboyo</string>
+    <string name="package_name">com.lirboyo.tahlilringkas</string>
+    <string name="custom_url_scheme">com.lirboyo.tahlilringkas</string>
+</resources>

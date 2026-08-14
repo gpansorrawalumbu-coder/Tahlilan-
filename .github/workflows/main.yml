@@ -17,33 +17,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: '22'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          validate-wrappers: false
 
       - name: Install dependencies
         run: npm install
 
       - name: Sync Capacitor
         run: npx cap sync android
+
       - name: Build Debug APK
         working-directory: android
         run: |
-         chmod +x gradlew
-         ./gradlew assembleDebug
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-          
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-         validate-wrappers: false
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
       - name: Upload APK
-      uses: actions/upload-artifact@v4
-      with:
-        name: Tahlilan-APK
-        path: android/app/build/outputs/apk/debug/app-debug.apk
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tahlilan-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
